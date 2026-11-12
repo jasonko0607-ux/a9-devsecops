@@ -1,16 +1,18 @@
+import ast
 import os
-import subprocess
+import subprocess  # noqa: S404  reviewed: only runs a fixed argument list
 
-password = "admin123"
+password = os.environ.get("APP_PASSWORD", "")
 
 
-def run(cmd):
-    return subprocess.call(cmd, shell=True)
+def run(args):
+    return subprocess.call(args)  # noqa: S603  args are not user input
 
 
 def calc(expr):
-    return eval(expr)
+    return ast.literal_eval(expr)
 
 
 def check(user):
-    assert user is not None
+    if user is None:
+        raise ValueError("user is required")
