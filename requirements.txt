@@ -21,7 +21,7 @@ protobuf==7.36.2
 pycodestyle==2.15.0
 pyflakes==4.1.0
 Pygments==2.21.0
-PyYAML==6.0.3
+PyYAML==6.0.4
 requests==2.34.2
 rich==15.0.0
 stevedore==5.9.1
